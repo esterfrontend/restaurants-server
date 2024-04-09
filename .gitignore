@@ -1,0 +1,17 @@
+node_modules/
+.env
+npm-debug.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+*.lnk
+
+# VS Code
+.vscode/*
