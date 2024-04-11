@@ -57,6 +57,10 @@ const editUser = async (req, res, next) => {
             { new: true }
         )
 
+        if(!updatedUser) {
+            res.status(400).json({ message: 'User not found' })
+        }
+
         res.status(200).json({ message:'User has been updated', user: updatedUser })
     } catch (error) {
         next(error)
