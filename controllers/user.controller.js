@@ -18,7 +18,7 @@ const signup = async (req, res, next) => {
             password: passwordCrypt
         })
 
-        res.status(200).json({ response: newUser })
+        res.status(200).json(newUser)
     } catch (error) {
         next(error)
     }
@@ -33,7 +33,14 @@ const login = async (req, res) => {
     })
 }
 
+const getProfile = async (req, res) => {
+    const user = await User.findById(req.user._id)
+
+    res.status(200).json(user)
+}
+
 module.exports = {
     signup,
-    login
+    login,
+    getProfile
 }
