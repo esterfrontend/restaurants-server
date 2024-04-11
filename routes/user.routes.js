@@ -9,6 +9,6 @@ router.all('/fail', (req, res) => {
 router.post('/signup', signup)
 router.post('/login', passport.authenticate('login', { session: false, failureRedirect: '/api/user/fail' }), login)
 router.post('/getProfile', passport.authenticate('jwt', { session: false }), getProfile)
-router.post('/edit', passport.authenticate('jwt', { session: false }), editUser)
+router.put('/edit', passport.authenticate('jwt', { session: false }), editUser)
 
 module.exports = router
