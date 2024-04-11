@@ -7,7 +7,11 @@ const userSchema = new Schema(
             unique: true,
             lowercase: true,
             trim: true,
-            required: [true, 'Indícanos un email']
+            required: [true, 'Email is required'],
+            match: [
+                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+                'Invalid email',
+            ]
         },
         password: {
             salt: {
