@@ -1,5 +1,6 @@
 const User = require('../models/user.model')
 const { createPassword } = require('../utils/auth')
+const jwt = require('jsonwebtoken')
 
 const signup = async (req, res, next) => {
     try {
@@ -23,6 +24,16 @@ const signup = async (req, res, next) => {
     }
 }
 
+const login = async (req, res) => {
+    res.status(200).json({
+        token: jwt.sign(
+            { user: req.user._id }, 
+            process.env.PASSPORT_SECRET, 
+            { expiresIn: '3d' })
+    })
+}
+
 module.exports = {
-    signup
+    signup,
+    login
 }
