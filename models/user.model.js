@@ -13,6 +13,10 @@ const userSchema = new Schema(
                 'Invalid email',
             ]
         },
+        username: {
+            type: String, 
+            required: true
+        },
         password: {
             salt: {
                 type: String, 

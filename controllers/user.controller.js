@@ -5,7 +5,7 @@ const { Types } = require('mongoose')
 
 const signup = async (req, res, next) => {
     try {
-        const { email, password } = req.body
+        const { email, username, password } = req.body
 
         const user = await User.findOne({ email })
         if(user) {
@@ -16,6 +16,7 @@ const signup = async (req, res, next) => {
 
         const newUser = await User.create({
             email,
+            username,
             password: passwordCrypt
         })
 
@@ -49,11 +50,11 @@ const editUser = async (req, res, next) => {
             return res.status(400).json({ message: 'Invalid user id' })
         }
 
-        const { email, password } = req.body
+        const { email, username, password } = req.body
 
         const updatedUser = await User.findByIdAndUpdate(
             userId, 
-            { email, password }, 
+            { email, username, password }, 
             { new: true }
         )
 
