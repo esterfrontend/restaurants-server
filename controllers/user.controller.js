@@ -63,10 +63,31 @@ const editUser = async (req, res, next) => {
     }
 }
 
+const deleteUser = async (req, res) => {
+    try {
+        const { _id: userId } = req.user
+        
+        if(!Types.ObjectId.isValid(userId)) {
+            return res.status(400).json({ message: 'Invalid user id' })
+        }
+
+        const deletedUser = User.findByIdAndDelete(userId)
+
+        if(!deletedUser) {
+            res.status(400).json({ message: 'User not found' })
+        }
+
+        res.status(200).json({ message: 'User has been deleted' })
+    } catch (error) {
+        next(error)
+    }
+}
+
 
 module.exports = {
     signup,
     login,
     getProfile,
-    editUser
+    editUser,
+    deleteUser
 }
