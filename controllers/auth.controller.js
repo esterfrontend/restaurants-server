@@ -7,6 +7,10 @@ const signup = async (req, res, next) => {
     try {
         const { email, username, password } = req.body
 
+        if(!email || !username || !password) {
+            res.status(400).json({ error: true, message: 'All fields are required' })
+        }
+
         const user = await User.findOne({ email })
         if(user) {
             res.status(400).json({ error: true, message: 'This email is already registered.' })
@@ -50,11 +54,11 @@ const editUser = async (req, res, next) => {
             return res.status(400).json({ message: 'Invalid user id' })
         }
 
-        const { email, username, password } = req.body
+        const { email, username } = req.body
 
         const updatedUser = await User.findByIdAndUpdate(
             userId, 
-            { email, username, password }, 
+            { email, username }, 
             { new: true }
         )
 

@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const passport = require('passport')
-const { signup, login, getProfile, editUser, deleteUser } = require('../controllers/user.controller')
+const { signup, login, getProfile, editUser, deleteUser } = require('../controllers/auth.controller')
 
 router.all('/fail', (req, res) => {
     res.status(401).json({ message: 'Unauthorized' })
