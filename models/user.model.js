@@ -28,7 +28,8 @@ const userSchema = new Schema(
             }
         },
         favouriteRestaurants: [{
-            type: String
+            type: Schema.Types.ObjectId,
+            ref: 'Restaurant'
         }]
     },
     {
