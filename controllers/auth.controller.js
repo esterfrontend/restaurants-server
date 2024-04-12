@@ -48,16 +48,10 @@ const getProfile = async (req, res) => {
 
 const editUser = async (req, res, next) => {
     try {
-        const { _id: userId } = req.user
-        
-        if(!Types.ObjectId.isValid(userId)) {
-            return res.status(400).json({ message: 'Invalid user id' })
-        }
-
         const { email, username } = req.body
 
         const updatedUser = await User.findByIdAndUpdate(
-            userId, 
+            req.user._id, 
             { email, username }, 
             { new: true }
         )
@@ -74,13 +68,7 @@ const editUser = async (req, res, next) => {
 
 const deleteUser = async (req, res) => {
     try {
-        const { _id: userId } = req.user
-        
-        if(!Types.ObjectId.isValid(userId)) {
-            return res.status(400).json({ message: 'Invalid user id' })
-        }
-
-        const deletedUser = User.findByIdAndDelete(userId)
+        const deletedUser = User.findByIdAndDelete(req.user._id)
 
         if(!deletedUser) {
             res.status(400).json({ message: 'User not found' })
