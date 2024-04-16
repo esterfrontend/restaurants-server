@@ -1,0 +1,1116 @@
+{
+	"info": {
+		"_postman_id": "7dff9f8d-a705-4972-a138-b72e77d61d15",
+		"name": "Restaurants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32259532"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "user1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Usuario1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/signup",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "user3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "Usuario3",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "229"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e5-UwiZfjGZOTCAoi7ilCMXgPSXicM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 16:38:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User has been created\",\n    \"user\": {\n        \"email\": \"user3@gmail.com\",\n        \"username\": \"Usuario3\",\n        \"favouriteRestaurants\": [],\n        \"_id\": \"661811fd98f787fc2c56917c\",\n        \"createdAt\": \"2024-04-11T16:38:21.587Z\",\n        \"updatedAt\": \"2024-04-11T16:38:21.587Z\"\n    }\n}"
+						},
+						{
+							"name": "Error: Email is already registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "user1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "Usuario1",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-6nKBmHnGlZHZzJT65CilWKcCtrs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 16:39:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"This email is already registered.\"\n}"
+						},
+						{
+							"name": "Error: Fields required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "user3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-SVTyfgjT8fenA1fDrWF3E5i3tjc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 16:43:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"All fields are required\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "user1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "user1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-NrWWw5yrrkFK35DqOZDXQLRAfX4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 15:38:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User has been logged\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjYxODAzYzBiZTU0OWExMGE5NmEzMGVjIiwiaWF0IjoxNzEyODQ5ODkxLCJleHAiOjE3MTMxMDkwOTF9.L7a0-wYRnN-Aj9BxhYv0Ug3-O220ea-5QXKMYgqxZ4w\"\n}"
+						},
+						{
+							"name": "Error: unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "user1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "3456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 14:55:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjYxODE0OGI4ZjhiMGU1YjY1MzM2MjVkIiwiaWF0IjoxNzEyODU0MTc3LCJleHAiOjE3MTMxMTMzNzd9.Oswz4QhuzpCi8tXKSy5fjKpSb4UTTuR3pz4l5ZexTWQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/auth/getprofile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"getprofile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/auth/getprofile",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"getprofile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "230"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e6-Og+rlKDIDyB0CG53/aZNe+GcdAE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 16:49:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User has been verified\",\n    \"user\": {\n        \"_id\": \"6618148b8f8b0e5b6533625d\",\n        \"email\": \"user1@gmail.com\",\n        \"username\": \"Usuario1\",\n        \"favouriteRestaurants\": [],\n        \"createdAt\": \"2024-04-11T16:49:15.890Z\",\n        \"updatedAt\": \"2024-04-11T16:49:15.890Z\"\n    }\n}"
+						},
+						{
+							"name": "Error: unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/auth/getprofile",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"getprofile"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 15:03:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjYxODE0OGI4ZjhiMGU1YjY1MzM2MjVkIiwiaWF0IjoxNzEyODU0MTc3LCJleHAiOjE3MTMxMTMzNzd9.Oswz4QhuzpCi8tXKSy5fjKpSb4UTTuR3pz4l5ZexTWQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "User1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/edit",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "NewUserName",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/edit",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "232"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e8-XYzvLA39FliybLPuoh0GShRWdmY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 16:51:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User has been updated\",\n    \"user\": {\n        \"_id\": \"6618148b8f8b0e5b6533625d\",\n        \"email\": \"user1@gmail.com\",\n        \"username\": \"NewUserName\",\n        \"favouriteRestaurants\": [],\n        \"createdAt\": \"2024-04-11T16:49:15.890Z\",\n        \"updatedAt\": \"2024-04-11T16:51:01.716Z\"\n    }\n}"
+						},
+						{
+							"name": "Error: unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "test1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/edit",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"edit"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 15:36:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjYxODA3NDFkMWNlZDE2MTljMjcwMDFhIiwiaWF0IjoxNzEyODUwNzg4LCJleHAiOjE3MTMxMDk5ODh9.RMWwTPzYOHK69QveONuGBZjtgEqQ-Xh5x7RdwlA0drE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/delete",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/delete",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-+Vuz+A3WZJP0jlk7FOLtE5djxrk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 15:53:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User has been deleted\"\n}"
+						},
+						{
+							"name": "Error: unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/delete",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"delete"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Apr 2024 15:53:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						}
+					]
+				}
+			],
+			"description": "## Signup:\n\n**Function:** creates a new user.\n\n**Required info:**\n\n- email\n- username\n- password\n    \n\n**Returns:** { message, user}\n\n## Login:\n\n**Function:** log a user in.\n\n**Required info:**\n\n- email\n- password\n    \n\n**Returns:** { message, token}\n\n## Get profile:\n\n**Function:** verify token and return user.\n\n**Required info:**\n\n- token\n    \n\n**Returns:** { message, user}\n\n## Edit:\n\n**Function:** edit user info.\n\n**Required info:**\n\n- token\n- new info (email, username, password)\n    \n\n**Returns:** { message, user}\n\n## Delete:\n\n**Function:** detele user.\n\n**Required info:**\n\n- token\n    \n\n**Returns:** { message }"
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/restaurants/getAll",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"restaurants",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/restaurants/getOne/:restaurant_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"restaurants",
+								"getOne",
+								":restaurant_id"
+							],
+							"variable": [
+								{
+									"key": "restaurant_id",
+									"value": "66156aacc4ba74071204b3da"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Plaza España, 1, Madrid",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test test test test ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/restaurants/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"restaurants",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Restaurante de prueba",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Hola hola",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/restaurants/edit/:restaurant_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"restaurants",
+								"edit",
+								":restaurant_id"
+							],
+							"variable": [
+								{
+									"key": "restaurant_id",
+									"value": "661824029b48625ecd97bfe6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/restaurants/delete/:restaurant_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"restaurants",
+								"delete",
+								":restaurant_id"
+							],
+							"variable": [
+								{
+									"key": "restaurant_id",
+									"value": "661824029b48625ecd97bfe6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "## Get All:\n\n**Function:** get all restaurants.\n\n**Returns:** \\[restaurants\\]\n\n## Get One:\n\n**Function:** get one restaurant.\n\n**Required info:**\n\n- restaurant_id\n    \n\n**Returns:** restaurant\n\n## Create:\n\n**Function:** create a restaurant.\n\n**Required info:**\n\n- name\n- address\n- image\n- description\n    \n\n**Returns:** { message, restaurant}\n\n## Edit:\n\n**Function:** edit restaurant info.\n\n**Required info:**\n\n- restaurant_id\n- name\n- address\n- image\n- description\n    \n\n**Returns:** { message, restaurant}\n\n## Delete:\n\n**Function:** detele restaurant.\n\n**Required info:**\n\n- restaurant_id\n    \n\n**Returns:** { message }"
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Favourite Restaurants",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjYxODE0OGI4ZjhiMGU1YjY1MzM2MjVkIiwiaWF0IjoxNzEyOTA0MzIyLCJleHAiOjE3MTMxNjM1MjJ9.H4Dffisa9awiofqutwg2ooOjyEmVjElXV1Jpg70FRCk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/getFavouriteRestaurants",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"getFavouriteRestaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like Restaurant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjYxODE0OGI4ZjhiMGU1YjY1MzM2MjVkIiwiaWF0IjoxNzEyOTA0MzIyLCJleHAiOjE3MTMxNjM1MjJ9.H4Dffisa9awiofqutwg2ooOjyEmVjElXV1Jpg70FRCk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/likeRestaurant/:restaurant_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"likeRestaurant",
+								":restaurant_id"
+							],
+							"variable": [
+								{
+									"key": "restaurant_id",
+									"value": "66156aacc4ba74071204b3db"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dislike Restaurant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjYxODE0OGI4ZjhiMGU1YjY1MzM2MjVkIiwiaWF0IjoxNzEyOTA0MzIyLCJleHAiOjE3MTMxNjM1MjJ9.H4Dffisa9awiofqutwg2ooOjyEmVjElXV1Jpg70FRCk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/dislikeRestaurant/:restaurant_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"dislikeRestaurant",
+								":restaurant_id"
+							],
+							"variable": [
+								{
+									"key": "restaurant_id",
+									"value": "66156aacc4ba74071204b3da"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "## Get favourite restaurants:\n\n**Function:** get favourite restaurants.\n\n**Required info:**\n\n- token\n    \n\n**Returns:** \\[favourite restaurants\\]\n\n## Like restaurant:\n\n**Function:** add restaurant to favourite restaurants user list.\n\n**Required info:**\n\n- token\n- restaurant_id\n    \n\n**Returns:** { message, \\[favourite restaurants\\] }\n\n## Dislike restaurant:\n\n**Function:** remove restaurant from favourite restaurants user list.\n\n**Required info:**\n\n- token\n- restaurant_id\n    \n\n**Returns:** { message, \\[favourite restaurants\\] }"
+		}
+	]
+}
