@@ -5,10 +5,10 @@ const passport = require('../passport')
 const cors = require("cors")
 
 const LOCAL_FRONT = "http://localhost:3001"
-const FRONTEND_URL = process.env.FRONTEND_ORIGIN || LOCAL_FRONT
+const FRONTEND_URL = process.env.FRONTEND_ORIGIN
 
 const corsOptions = {
-    origin: [FRONTEND_URL, LOCAL_FRONT],
+    origin: '*',
     credentials: true
 }
 
