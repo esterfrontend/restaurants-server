@@ -4,10 +4,11 @@ const cookieParser = require('cookie-parser')
 const passport = require('../passport')
 const cors = require("cors")
 
-const FRONTEND_URL = process.env.FRONTEND_ORIGIN || "http://localhost:3001"
+const LOCAL_FRONT = "http://localhost:3001"
+const FRONTEND_URL = process.env.FRONTEND_ORIGIN || LOCAL_FRONT
 
 const corsOptions = {
-    origin: [FRONTEND_URL],
+    origin: [FRONTEND_URL, LOCAL_FRONT],
     credentials: true
 }
 
