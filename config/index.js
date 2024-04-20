@@ -8,7 +8,7 @@ const LOCAL_FRONT = "http://localhost:3001"
 const FRONTEND_URL = process.env.FRONTEND_ORIGIN
 
 const corsOptions = {
-    origin: '*',
+    origin: '[FRONTEND_URL, LOCAL_FRONT]',
     credentials: true
 }
 
