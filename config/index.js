@@ -8,7 +8,13 @@ const LOCAL_FRONT = "http://localhost:3001"
 const FRONTEND_URL = process.env.FRONTEND_ORIGIN
 
 const corsOptions = {
-    origin: '[FRONTEND_URL, LOCAL_FRONT]',
+    origin: function (origin, callback) {
+        if ([FRONTEND_URL, LOCAL_FRONT].includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }
 
