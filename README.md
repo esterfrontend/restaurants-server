@@ -1,6 +1,6 @@
-# ACTÚO CONTRA EL BULLYING: 
+# Restaurants API: 
 
-"Actúo contra el bullying" is a web application that helps schools take action against cases of bullying. Students, teachers or external people can anonymously report an incident. The school will be notified, and a professional will be assigned to study and take measures along with the school.
+Restaurants API is a web application that provides users with a restaurants list and their locations. Additionally, users can create, edit, delete restaurants or add them to their favourites list.
 
 ## Deployed Application:
 
