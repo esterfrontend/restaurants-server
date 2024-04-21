@@ -91,7 +91,7 @@ const editRestaurant = async (req, res, next) => {
     }
 }
 
-const deleteRestaurant = async (req, res) => {
+const deleteRestaurant = async (req, res, next) => {
     try {
         const { restaurant_id } = req.params 
 
@@ -99,7 +99,7 @@ const deleteRestaurant = async (req, res) => {
             return res.status(400).json({ error: true, message: 'Invalid restaurant id' })
         }
 
-        const deletedRestaurant = Restaurant.findByIdAndDelete(restaurant_id)
+        const deletedRestaurant = await Restaurant.findByIdAndDelete(restaurant_id)
 
         if(!deletedRestaurant) {
             res.status(400).json({ message: 'Restaurant not found' })
