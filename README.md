@@ -1,6 +1,6 @@
 # Restaurants API: 
 
-Restaurants API is a web application that provides users with a restaurants list and their locations. Additionally, users can create, edit, delete restaurants or add them to their favourites list.
+Restaurants API is a web application that provides users with a restaurants list and their locations. Users can edit and delete their account. Additionally, users can create, edit, delete restaurants or add them to their favourites list.
 
 ## Deployed Application:
 
